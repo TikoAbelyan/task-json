@@ -106,7 +106,21 @@ fetch('https://api.myjson.com/bins/ea4rc')
 		out+='</div>';				
         out+='</div>';               
 		}	
-	doc.getElementById('product').innerHTML = out;
+	document.getElementById('product').innerHTML = out;
+
+	let inpStatic = document.getElementsByClassName("product__count_input");
+	let btnChangePlus = document.getElementsByClassName("btn_arrow-up");
+	let btnChangeMinus = document.getElementsByClassName("btn_arrow-down");
+	for(let x=0;x<btnChangePlus.length;x++){
+		btnChangePlus[x].onclick=function(){
+			inpStatic[x].value++
+		}
+	}
+	for(let y=0;y<btnChangeMinus.length;y++){
+		btnChangeMinus[y].onclick=function(){
+			inpStatic[y].value--
+		}
+	}
 }) 
 		 
 		 
@@ -235,3 +249,6 @@ fetch('https://api.myjson.com/bins/ea4rc')
 		  arrowDown[m].addEventListener("click", function(e){for(j=m; j>1;m--){count[j].value-=1;}}, false);
 		}
 	*/
+	
+
+	
